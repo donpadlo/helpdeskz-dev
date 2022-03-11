@@ -65,9 +65,9 @@ class Messages extends ResourceController
             ]);
         }
 
-        if($validation->withRequest($this->request)->run() == false){
-            return $api->output(implode(' ',array_values($validation->getErrors())), true);
-        }
+//        if($validation->withRequest($this->request)->run() == false){
+//            return $api->output(implode(' ',array_values($validation->getErrors())), true);
+//        }
 
         if ($settings->config('ticket_attachment')) {
             if ($files_uploaded = $attachments->ticketUpload()) {

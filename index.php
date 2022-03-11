@@ -7,6 +7,23 @@ if (phpversion() < $minPHPVersion)
 }
 unset($minPHPVersion);
 
+$xtends=[
+'ctype',
+'curl',
+'exif',
+'fileinfo',
+'gd',
+'intl',
+'mysqli',    
+'mbstring',
+'pcntl'];
+
+foreach ($xtends as $ex) {
+    if (extension_loaded($ex)==false){
+        die("I need extension:".$ex);    
+    };    
+};
+
 // Path to the front controller (this file)
 define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
 define('HDZ_PATH', FCPATH.'hdz'.DIRECTORY_SEPARATOR);

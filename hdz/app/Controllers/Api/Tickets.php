@@ -74,9 +74,9 @@ class Tickets extends ResourceController
                 'max_size' => lang_replace('Api.error.fileIsBig', ['%size%' => number_to_size($max_size*1024, 2)])
             ]);
         }
-        if($validation->withRequest($this->request)->run() == false){
-            return $api->output(implode(' ',array_values($validation->getErrors())), true);
-        }
+//        if($validation->withRequest($this->request)->run() == false){
+//            return $api->output(implode(' ',array_values($validation->getErrors())), true);
+//        }
         if ($settings->config('ticket_attachment')) {
             if ($files_uploaded = $attachments->ticketUpload()) {
                 $files = $files_uploaded;
