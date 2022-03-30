@@ -133,6 +133,7 @@ class Tickets extends ResourceController
         departments.name as department_name')
             ->join('users', 'users.id=tickets.user_id')
             ->join('departments', 'departments.id=tickets.department_id')
+            ->orderBy('id','desc')                
             ->paginate($settings->config('tickets_page'), 'default', $page);
         $pager = $this->model->pager;
         return $api->output([
